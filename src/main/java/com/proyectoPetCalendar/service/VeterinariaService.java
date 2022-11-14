@@ -8,9 +8,9 @@ import java.util.List;
 public interface VeterinariaService {
     public List<Veterinaria> getVeterinarias(); 
     
-    public Veterinaria getVeterinaria(Veterinaria usuario);
+    public Veterinaria getVeterinaria(Veterinaria veterinaria);
     
-    public void save(Veterinaria usuario);
+    public void save(Veterinaria veterinaria);
     
-    public void delete(Veterinaria usuario);
+    public void delete(Veterinaria veterinaria);
 }

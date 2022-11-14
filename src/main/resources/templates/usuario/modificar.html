@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html
+<html xmlns: th="http://www.thymeleaf.org" 
+      xmlns="http://www.w3.org/1999">
+    <head>
+        <title>My Pet Calendar</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <h1>Crear Usuario</h1>
+            
+        </header>
+        
+        <div>
+            <form th:action="@{/usuario/guardar}"
+                  method="post"
+                  th:object="${usuario}">
+                <input type="hidden"  name="idUsuario" th:field="*{idUsuario}"/>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" th:field="*{nombre}" >
+                <br><!-- comment -->
+                <label for="apellidos">Apellidos</label>
+                <input type="text" name="apellidos" th:field="*{apellidos}">
+                <br><!-- comment -->
+                <label for="correo">Correo</label>
+                <input type="text" name="correo" th:field="*{correo}">
+                <br/><!-- comment -->
+                <label for="contraseña">Contraseña</label>
+                <input type="text" name="contraseña" th:field="*{contraseña}"/>
+                <br>
+                <label for="telefono">Telefono</label>
+                <input type="text" name="telefono" th:field="*{telefono}"/>
+                <br><br>
+                <input type="submit" name="guardar" value="guardar"/>
+                
+                
+                
+                
+            </form>
+            
+            
+            
+            
+            
+        </div>
+        
+    </body>
+</html>

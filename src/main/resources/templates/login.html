@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--xmlns:th="http://www.thymeleaf.org"  th:text="Hola con Thymeleaf"-->
+
+<html xmlns: th="http://www.thymeleaf.org" 
+      xmlns="http://www.w3.org/1999">
+    <head>
+        <title>My Pet Calendar</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/CSS/menus.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+    <header/>
+    <div>
+        <h2>Inicio De Sesión</h2>
+        <div >
+            <label>Usuario o Correo</label>
+            <br/>
+            <input type="text" name="correo"/>
+            <br/>
+            <label>Contraseña</label><br/>
+            <input type="password" name="contraseña" /> 
+            <br/>
+            <br/>
+            <input type="submit" name="iniciar" value="Iniciar"/>
+            <br/>
+            <a th:href="@{/usuario/nuevo}">Si aún no tienes cuenta registrate aquí</a>
+            
+       </div>
+
+        
+        <div>
+            
+        </div>
+    </div>
+
+    <footer />
+    </body>
+</html>
+
+
+
+
