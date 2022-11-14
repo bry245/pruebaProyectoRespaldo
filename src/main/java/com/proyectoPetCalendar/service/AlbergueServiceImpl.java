@@ -3,6 +3,7 @@ package com.proyectoPetCalendar.service;
 
 import com.proyectoPetCalendar.dao.AlbergueDao;
 import com.proyectoPetCalendar.domain.Albergue;
+import com.proyectoPetCalendar.domain.Albergue;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,9 +18,8 @@ public class AlbergueServiceImpl implements AlbergueService {
 
     @Override
     @Transactional (readOnly=true)
-    public List<Albergue> getAlbergues() { //false
-        var lista = (List<Albergue>) albergueDao.findAll();
-        return lista;
+    public List<Albergue> getAlbergues() {
+        return(List<Albergue>) albergueDao.findAll();   
     }
 
     @Override

@@ -3,9 +3,6 @@ package com.proyectoPetCalendar.service;
 import com.proyectoPetCalendar.domain.Albergue;
 import java.util.List;
 
-import java.util.List;
-
-
 public interface AlbergueService {
     public List<Albergue> getAlbergues(); 
     

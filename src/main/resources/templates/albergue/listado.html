@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+        <div class="contenido">
+            <h2>Listado de albergues</h2>
+            <br/>
+            <br/>
+            <div th:if = "${albergues != null and !albergues.empty}">
+                <br/>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Ubicación</th>
+                            <th>Cuenta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="albergue : ${albergues}">
+                            <td th:text="${albergue.nombre}"></td>
+                            <td th:text="${albergue.descripcion}"></td>
+                            <td th:text="${albergue.ubicacion}"></td>
+                            <td th:text="${albergue.cuenta}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div th:if="${albergues == null or albergues.empty}">
+                La lista esta vacía
+            </div>
+            <br/>
+        </div>
+        <footer th:replace="layout/plantilla :: footer"/>
+    </body>
+</html>

@@ -27,7 +27,6 @@ public class LoginController {
     
     @GetMapping("/usuario/nuevo")
     public String nuevoUsuario(Usuario usuario){
-        
         return"/usuario/modificar";
     }
     
@@ -42,7 +41,5 @@ public class LoginController {
      model.addAttribute("usuario", usuario);
      return"/usuario/modificar";
         
-    }
-    
-    
+    }  
 }

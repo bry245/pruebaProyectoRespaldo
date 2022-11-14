@@ -1,0 +1,79 @@
+CREATE SCHEMA petcalendar;
+create user 'usuario'@'%' identified by 'usuario1';
+
+grant all privileges on petcalendar.* to 'usuario'@'%';
+flush privileges;
+
+create table petcalendar.usuario(
+id_usuario int not null AUTO_INCREMENT primary key,
+nombre varchar(20),
+apellidos varchar(25),
+correo varchar(25),
+contraseña varchar(25),
+telefono varchar(10)
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_eo_0900_ai_ci;
+
+create table petcalendar.mascota(
+id_mascota int not null AUTO_INCREMENT primary key,
+nombre_propietario varchar(25) not null,
+apellidos_propietario varchar(30) not null,
+cedula int not null,
+telefono varchar(10),
+direccion varchar(50),
+nombre_mascota varchar(25),
+edad varchar(10),
+tipo varchar(35)
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_eo_0900_ai_ci;
+
+create table petcalendar.veterinaria(
+id_veterinaria int not null AUTO_INCREMENT primary key,
+nombre varchar(35)not null,
+ubicacion varchar(50),
+telefono varchar(10) 
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_eo_0900_ai_ci;
+
+
+create table petcalendar.albergue(
+id_albergue int not null AUTO_INCREMENT primary key,
+nombre varchar(40),
+descripcion varchar(40),
+ubicacion varchar(50),
+cuenta varchar(15)
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_eo_0900_ai_ci;
+
+
+create table petcalendar.voluntarios(
+id_voluntario int not null AUTO_INCREMENT primary key,
+nombre varchar(35)not null,
+apellidos varchar(50),
+telefono varchar(10) 
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_eo_0900_ai_ci;
+
+
+create table petcalendar.citas(
+id_cita int not null AUTO_INCREMENT primary key,
+id_mascota int,
+id_veterinaria int,
+fecha date,
+
+foreign key (id_mascota) references mascota(id_mascota),
+foreign key (id_veterinaria) references veterinaria(id_veterinaria)
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_eo_0900_ai_ci;

@@ -22,7 +22,7 @@ public class CitasServiceImpl  implements CitasService{
     
     @Override
      @Transactional (readOnly=true)
-    public List<Citas> getCitass() {
+    public List<Citas> getCitas() {
         return(List<Citas>)citasDao.findAll();
     }
 
@@ -36,10 +36,7 @@ public class CitasServiceImpl  implements CitasService{
      @Transactional 
     public void save(Citas citas) {
         Mascota mascota = citas.getMascota();
-        Veterinaria veterinaria= citas.getVeterinaria();
-        
-        
-        
+        Veterinaria veterinaria= citas.getVeterinaria();  
     }
 
     @Override

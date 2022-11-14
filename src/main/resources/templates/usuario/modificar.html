@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-
-<html
-<html xmlns: th="http://www.thymeleaf.org" 
-      xmlns="http://www.w3.org/1999">
+<html xmlns: th="http://www.thymeleaf.org">
     <head>
         <title>My Pet Calendar</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <header>
+        <header th:replace="layout/plantilla :: header"/>
+        <div class = "contenido">
             <h1>Crear Usuario</h1>
-            
-        </header>
-        
-        <div>
+            <br>
             <form th:action="@{/usuario/guardar}"
                   method="post"
                   th:object="${usuario}">
@@ -35,17 +31,8 @@
                 <input type="text" name="telefono" th:field="*{telefono}"/>
                 <br><br>
                 <input type="submit" name="guardar" value="guardar"/>
-                
-                
-                
-                
             </form>
-            
-            
-            
-            
-            
         </div>
-        
+        <footer th:replace="layout/plantilla :: footer"/>
     </body>
 </html>

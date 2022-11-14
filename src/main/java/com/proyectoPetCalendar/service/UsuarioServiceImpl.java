@@ -14,12 +14,10 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Autowired
     private UsuarioDao usuarioDao;
     
-    
     @Override
-    @Transactional (readOnly=true)
+    @Transactional(readOnly=true)
     public List<Usuario> getUsuarios() {
-        return(List<Usuario>) usuarioDao.findAll();
-        
+        return(List<Usuario>) usuarioDao.findAll();   
     }
 
     @Override
@@ -37,8 +35,6 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     @Transactional
     public void delete(Usuario usuario) {
-        usuarioDao.delete(usuario);
-        
+        usuarioDao.delete(usuario); 
     }
-    
 }

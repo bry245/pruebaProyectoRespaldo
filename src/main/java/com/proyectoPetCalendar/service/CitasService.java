@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CitasService {
     
-    public List<Citas> getCitass(); 
+    public List<Citas> getCitas(); 
     
     public Citas getCitas(Citas citas);
     

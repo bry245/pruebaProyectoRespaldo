@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+    <head>
+        <title>My Pet Calendar</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header th:fragment="header" class="header"> <!-- En lugar de CSS se utilizan clases -->
+            <nav class="nav"> <!-- En lugar de CSS se utilizan clases -->
+                <a th:href="@{/}" class="logo nav-link">My Pet Calendar</a>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item">
+                        <a class="nav-menu-link nav-link" th:href="@{/}">Inicio</a>
+                        <a class="nav-menu-link nav-link" th:href="@{/albergue/listado}">Albergues</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <footer th:fragment="footer" class="footer">
+            <p>&COPY Derechos Reservados 2022</p>
+        </footer>
+    </body>
+</html>
