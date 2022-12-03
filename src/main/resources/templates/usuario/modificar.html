@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html xmlns: th="http://www.thymeleaf.org">
     <head>
+    
+    
         <title>My Pet Calendar</title>
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <img src="../../Imagenes/logo (2).jpg" alt=""/>
         <header th:replace="layout/plantilla :: header"/>
         <div class = "contenido">
             <h1>Crear Usuario</h1>
@@ -20,7 +24,7 @@
                 <br><!-- comment -->
                 <label for="apellidos">Apellidos</label>
                 <input type="text" name="apellidos" th:field="*{apellidos}">
-                <br><!-- comment -->
+                <br>
                 <label for="correo">Correo</label>
                 <input type="text" name="correo" th:field="*{correo}">
                 <br/><!-- comment -->
@@ -30,7 +34,8 @@
                 <label for="telefono">Telefono</label>
                 <input type="text" name="telefono" th:field="*{telefono}"/>
                 <br><br>
-                <input type="submit" name="guardar" value="guardar"/>
+                <input type="submit" name="guardar" value="Guardar"/>
+                <button><a th:href="@{/}">Regresar</button>
             </form>
         </div>
         <footer th:replace="layout/plantilla :: footer"/>

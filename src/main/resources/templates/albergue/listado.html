@@ -17,20 +17,23 @@
                     <thead>
                         <tr>
                             <th>Nombre</th>
-                            <th>Descripción</th>
                             <th>Ubicación</th>
                             <th>Cuenta</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="albergue : ${albergues}">
-                            <td th:text="${albergue.nombre}"></td>
+                        <tr th:each="albergue:${albergues}">
                             <td th:text="${albergue.descripcion}"></td>
                             <td th:text="${albergue.ubicacion}"></td>
                             <td th:text="${albergue.cuenta}"></td>
+                            
                         </tr>
                     </tbody>
                 </table>
+                <br/>
+                <br/>
+                <br/>
+                <button style="background-color: cornflowerblue"><a th:href="@{/}">Atrás</a></button>
             </div>
             <div th:if="${albergues == null or albergues.empty}">
                 La lista esta vacía

@@ -21,7 +21,6 @@ public class Albergue implements Serializable{
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id_albergue") 
     private Long idAlbergue;
-    private String nombre;
     private String descripcion;
     private String ubicacion;
     private String cuenta;
@@ -29,8 +28,8 @@ public class Albergue implements Serializable{
     public Albergue() {
     }
 
-    public Albergue(String nombre, String descripcion, String ubicacion, String cuenta) {
-        this.nombre = nombre;
+    public Albergue( String descripcion, String ubicacion, String cuenta) {
+        
         this.descripcion = descripcion;
         this.ubicacion = ubicacion;
         this.cuenta = cuenta;
